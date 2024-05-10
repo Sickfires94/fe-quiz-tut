@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "16b511a7-b3fb-4681-923c-0253a825f466",
+		"name": "PractiCal  - QUIZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12310744",
+		"_collection_link": "https://bold-moon-100639.postman.co/workspace/New-Team-Workspace~42431af4-2713-4d64-9d83-84b1c93ef025/collection/12310744-16b511a7-b3fb-4681-923c-0253a825f466?action=share&source=collection_link&creator=12310744"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "Pa$$w0rd!",
+									"description": "Pa$$w0rd!",
+									"type": "text"
+								},
+								{
+									"key": "social_auth_type",
+									"value": "normal",
+									"description": "['normal','google','facebook'] one of thees options will be passed",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jivynosyfu@mailinator.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "Post Quiz",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gender",
+									"value": "Male",
+									"description": "male,female",
+									"type": "text"
+								},
+								{
+									"key": "main_goal",
+									"value": "Gain muscle",
+									"description": "Lose weight / Get lean,Gain muscle,Maintain weight",
+									"type": "text"
+								},
+								{
+									"key": "average_daily_activity_level",
+									"value": "High",
+									"description": "Low,Medium,High",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "60",
+									"description": "Greater then 17",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "81",
+									"description": "atleast 45 kg or 100 lb",
+									"type": "text"
+								},
+								{
+									"key": "average_meals_day",
+									"value": "3",
+									"description": "1,2,3,4,5",
+									"type": "text"
+								},
+								{
+									"key": "average_snacks_day",
+									"value": "5",
+									"description": "0,1,2,3,4,5",
+									"type": "text"
+								},
+								{
+									"key": "meals_deliver_per_day",
+									"value": "2",
+									"description": "2,3,4",
+									"type": "text"
+								},
+								{
+									"key": "snacks_deliver_per_day",
+									"value": "0",
+									"description": "0,1,2,3,4",
+									"type": "text"
+								},
+								{
+									"key": "meal_days_per_week",
+									"value": "5",
+									"description": "5,6,7",
+									"type": "text"
+								},
+								{
+									"key": "meal_plan_require_weeks",
+									"value": "1",
+									"description": "1,2,4",
+									"type": "text"
+								},
+								{
+									"key": "quiz_type",
+									"value": "quiz_a",
+									"description": "quiz_a,quiz_b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/quiz",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Common Quiz Dynamic",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/common/quiz?average_meals_day=2&average_snacks_day=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"common",
+								"quiz"
+							],
+							"query": [
+								{
+									"key": "average_meals_day",
+									"value": "2"
+								},
+								{
+									"key": "average_snacks_day",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Content Related",
+			"item": [
+				{
+					"name": "Get Faq",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/faq",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"faq"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{auth_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://sandbox.practical.me/api"
+		},
+		{
+			"key": "auth_token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1IiwianRpIjoiNGMxODUxOTIxMmJlY2U4ZmQwYTE3NTZkNjg1ZWU1MGU1MzE5YzE3NjhlN2VkODgyNWY3YzkzZjdiNTliOGM5OTVmOGQ1YTdlZDA2ODk5YTkiLCJpYXQiOjE3MTUzMjIyMDQuOTMwMDMzLCJuYmYiOjE3MTUzMjIyMDQuOTMwMDM0LCJleHAiOjE3NDY4NTgyMDQuOTIyMzA1LCJzdWIiOiIyMDEiLCJzY29wZXMiOltdfQ.Z005qxdgkTonyxO0faKPZ0Q9_pIi8wA7BRPgBKz2B6vACHSn0Twb7q10ajv1IynZK5JH8Zl6qqWZ1BDYUoNFodiREq2dEF3qOg7LjWpPNFVtGNaTb_7W6cLwus4zIhrSBH7B4DEEHgIVIqaFn9UpmR31z8yJH0yBcOPUKq07Jrhy6TYHNiJQtGRtNnQ9RQisQYrveQ2UB5xCozewapQOwzF5yMYpf4eNkPtHBtNAmxxNTAkEEs-ML8pL9M0wEXKKBprKZOEn--UDLsgIrSCn-eEuwe5BkvUswtld7a0-pR7p7StIqCT7tMdgVuTvM08aBy1zEdhalM_O7xyifiXt9L5A9ICrcxkko6ge4eMoqwbWSZg4IR5MSlJk8lXgaJOBPiuRrkZGBll78ioqAnB8R-PbIC7xcpeveSxRj9pglotiCyzIYVu-TbZolvReLlJI_nJZ1B8A4880AG59BoondSGSAX5hiR3FF5eGTqB94sf6YpYPQDOhS24auOUgUOLNVxI1geOxryiMpugXUdfAH7t_CFZmo4YyxvBxAH7AJJC53lE1IwxjoszMEPG_RUfgobmNrB4UWnCMvcKJ3rXbZm8Sk-RZtmE7SBzZqNcZBmlpewGfbQ-euO1HlK9u5YFKX4meuTtUyXgaMH0F0DadepJNg7tvj22fAxJ-o_TE-BE"
+		},
+		{
+			"key": "localUrl",
+			"value": "http://127.0.0.1:8000/api"
+		},
+		{
+			"key": "aws_url",
+			"value": "https://admin.practical.me/api"
+		},
+		{
+			"key": "stg_url",
+			"value": "https://sandbox.practical.me/api"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}

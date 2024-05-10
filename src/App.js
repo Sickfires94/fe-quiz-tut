@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { NotificationContainer } from "react-notifications";
+import AuthPage from "./components/authPage";
+import UserPage from "./components/UserPage";
+import AdminPage from "./components/AdminPage";
+import { useSelector } from "react-redux";
+
 
 function App() {
+
+  const {loggedIn, role} = useSelector(state => state.user);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loggedIn ? (role === "admin" ? <AdminPage /> : <UserPage />) : <AuthPage />}
+      
+      <NotificationContainer/>
     </div>
   );
 }
+
+
 
 export default App;
